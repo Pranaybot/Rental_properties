@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="div_grid">
+    <div class="rental_window">
+        <div class="space">
+            <img src="{{ url_for('static', filename='images/house.png') }}" alt="home" class="home">
+            <p class="hs"><b>Houses</b></p>
+        </div>
+        <br>
+        <div class="text">
+            <a class="lnk" href="/houses"><span>View Details</span></a>
+        </div>
+    </div>
+
+    <div class="tenant_window">
+        <div class="space">
+            <img src="{{ url_for('static', filename='images/tenant.png') }}" alt="home" class="tenant">
+            <p class="hs"><b>Tenants</b></p>
+        </div>
+        <br>
+        <div class="text">
+            <a class="lnk" href="/houses"><span>View Details</span></a>
+        </div>
+    </div>
+
+    <div class="payment_window">
+        <div class="space">
+            <img src="{{ url_for('static', filename='images/payment.jpeg') }}" alt="home" class="payment">
+            <p class="hs"><b>Payments</b></p>
+        </div>
+        <br>
+        <div class="text">
+            <a class="lnk" href="/houses"><span>View Details</span></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

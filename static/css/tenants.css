@@ -1,0 +1,73 @@
+.buttons {
+    display:flex;
+    flex:1;
+}
+
+.add{
+    margin-top:20px;
+    margin-left:120px;
+}
+
+.print{
+    margin-top:20px;
+    margin-left:30px;
+}
+
+.save{
+    margin-top:20px;
+    margin-left:30px;
+}
+
+.add_button{
+    border: 1px solid #E5BEBE;
+    color: white;
+    background-color:#CD2020;
+    border-radius:15px;
+    padding:5px 30px 5px 30px;
+}
+
+.print_button{
+    border: 1px solid #E5BEBE;
+    color: white;
+    background-color:#91AD8C;
+    border-radius:15px;
+    padding:5px 30px 5px 30px;
+}
+
+.save_button{
+    border: 1px solid #E5BEBE;
+    color: white;
+    background-color:#9699CB;
+    border-radius:15px;
+    padding:5px 30px 5px 30px;
+}
+
+table{
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 95%
+}
+
+td, th {
+  border: 1px solid #C5C5CD;
+  text-align: center;
+  padding: 2px 2px 2px 2px;
+  color:#E9F1EF;
+}
+
+th{
+    background-color:#619C40;
+}
+
+td {
+    color:#919092;
+}
+
+h2{
+    margin-top:80px;
+    margin-left:120px;
+}
+
+.mainTable {
+    margin-left:120px;
+}

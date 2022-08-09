@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SunRentals Login</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icons8-tropics-48.png') }}">
+    <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="form-container">
+        <h1> SunRentals </h1>
+        <img src="{{ url_for('static', filename='images/sun.png') }}" alt="Sun" class="sun">
+        <div class="login-form">
+            <h3> Login </h3>
+            <form action="/main" method="get">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" placeholder="Enter username"
+                       name="username" required><br>
+                <br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" placeholder="Enter password"
+                       name="password" required><br>
+                <br>
+                <input type="submit" value="Sign In" id="btn">
+                <br>
+            </form>
+        </div>
+    </div>
+    <p> Forgot your password? <a href="/forgot_password"><span class="link">Click here</span></a></p>
+    <p> Don't have an account? <a href="/signup"><span class="link">Sign up here</span></a></p>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script>
+        $("#btn").click(function (e) {
+            var username = $("#username").val();
+            var password = $("#password").val();
+
+            if(username=="ppentaparthy1" && password=="&1<6.,oA") {
+                window.location.href="/main";
+            }
+            else{
+                window.alert("Invalid UserName and Password");
+            }
+
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>

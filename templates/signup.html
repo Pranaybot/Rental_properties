@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SunRentals Signup</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icons8-tropics-48.png') }}">
+    <link href="{{ url_for('static', filename='css/signup.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="signup-container">
+        <h1> SunRentals </h1>
+        <img src="{{ url_for('static', filename='images/sun.png') }}" alt="Sun" class="sun">
+        <div class="signup-form">
+            <h3> Sign Up </h3>
+            <form action="/test" method="post">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" placeholder="Enter username"
+                       name="username" required size="59"><br>
+                <br>
+                <div class="pwd_fields">
+                    <div class="pwd">
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" placeholder="Enter password"
+                               name="password" required size="25"><br>
+                        <br>
+                    </div>
+                    <div class="confirm">
+                        <label for="confpassword">Confirm password:</label><br>
+                        <input type="password" id="confpassword" placeholder="Confirm password"
+                               name="confpassword" required size="25" onkeyup="register()"><br>
+                        <br>
+                        <div id="checkconfirm"></div>
+                        <script type="text/javascript" src="{{ url_for('static', filename='js/confirm_password.js') }}"></script>
+                        <br>
+                    </div>
+                </div>
+                <label for="emailaddress">Enter email address:</label><br>
+                <input type="text" id="emailaddress" placeholder="Enter email address"
+                       name="emailaddress" required size="59"><br>
+                <br>
+                <button type="submit" id="btn1"> Create account </button>
+                <br>
+            </form>
+        </div>
+        <br>
+        <br>
+        <div class="home_page">
+            <button id="btn2"><a href="/" class="anchor"> Return to Home Page </a></button>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/confirm_password.js') }}"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+        <script>
+            $("#btn1").click(function (e) {
+                var username = $("#username").val();
+                var password = $("#password").val();
+                var email = $("#emailaddress").val();
+                $.ajax({
+                    url:"/test",
+                    type: "POST",
+                    data:{'Username':username,
+                    'Password':password,
+                    'Email':email}
+                });
+
+                e.preventDefault();
+            })
+        </script>
+    </div>
+</body>
+</html>

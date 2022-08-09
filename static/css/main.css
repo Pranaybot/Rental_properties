@@ -1,0 +1,49 @@
+p {
+    color:blue;
+}
+
+.div_grid {
+    display:flex;
+    flex:1;
+}
+
+.rental_window{
+    margin-top:180px;
+    margin-left:120px;
+}
+
+.tenant_window{
+    margin-top:180px;
+    margin-left:120px;
+}
+
+.payment_window{
+    margin-top:180px;
+    margin-left:120px;
+}
+
+.hs{
+    color:green;
+    margin-left:50px;
+}
+
+.space {
+    display:flex;
+    flex:1;
+}
+
+.tenant{
+    width:155px;
+}
+
+.payment{
+    width:155px;
+}
+
+.home{
+    width:200px;
+}
+
+.lnk{
+    text-decoration: none;
+}

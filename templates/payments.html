@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <link href="{{ url_for('static', filename='css/payments.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block body %}
+<h2>Payment Information</h2>
+<div class="buttons">
+    <div class="add">
+        <button class="add_button" id="btn">Add entry</button>
+    </div>
+    <div class="print">
+        <button class="print_button" id="btn2">Print page</button>
+    </div>
+    <div class="save">
+        <button class="save_button" id="btn3">Save as CSV file</button>
+    </div>
+</div>
+<br>
+<div class="mainTable">
+    <table id="Mytable">
+
+      <tr>
+        <th>Payment ID</th>
+        <th>Monthly payment</th>
+        <th>Tenant ID</th>
+        <th>Loan amount</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </tr>
+
+      <tbody>
+        {% for row in value %}
+            <tr id="a">
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td> Remove </td>
+                <th> Update </th>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/print.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/save.js') }}"></script>
+{% endblock %}
