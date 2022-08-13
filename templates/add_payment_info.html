@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link href="{{ url_for('static', filename='css/add_payment_info.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block body %}
+<h2>Payment Info Form</h2>
+<div class="addpayment">
+    <form>
+        <label for="paymentid">Payment ID:</label><br>
+        <input type="text" id="paymentid" name="paymentid" size="35"><br>
+        <br>
+        <label for="monpayment">Monthly payment:</label><br>
+        <input type="Number" id="monpayment" name="monpayment"><br>
+        <br>
+        <label for="tenantid">Tenant ID:</label><br>
+        <input type="text" id="tenantid" name="tenantid" size="35"><br>
+        <br>
+        <label for="loanamount">Loan amount:</label><br>
+        <input type="Number" id="loanamount" name="loanamount"><br>
+        <br>
+        <button id="btn" > Submit </button>
+        <br>
+    </form>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/add_payments.js') }}"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+{% endblock %}

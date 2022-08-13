@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link href="{{ url_for('static', filename='css/add_rental_property.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block body %}
+<h2>Rental Property Form</h2>
+<div class="addrent">
+    <form>
+        <label for="propaddress">Property address:</label><br>
+        <input type="text" id="propaddress" name="propaddress" size="35"><br>
+        <br>
+        <label for="propvalue">Property value:</label><br>
+        <input type="Number" id="propvalue" name="propvalue"><br>
+        <br>
+        <label for="condition">Condition:</label><br>
+        <input type="text" id="condition" name="condition" size="35"><br>
+        <br>
+        <label for="type">Type:</label><br>
+        <input type="text" id="type" name="type" size="35"><br>
+        <br>
+        <button id="btn" > Submit </button>
+        <br>
+    </form>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/add_houses.js') }}"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+{% endblock %}

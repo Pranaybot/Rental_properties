@@ -13,11 +13,6 @@
     margin-left:30px;
 }
 
-.save{
-    margin-top:20px;
-    margin-left:30px;
-}
-
 .add_button{
     border: 1px solid #E5BEBE;
     color: white;
@@ -34,7 +29,7 @@
     padding:5px 30px 5px 30px;
 }
 
-.save_button{
+.filter_button{
     border: 1px solid #E5BEBE;
     color: white;
     background-color:#9699CB;
@@ -55,8 +50,10 @@ td, th {
   color:#E9F1EF;
 }
 
+
 th{
     background-color:#619C40;
+    position:sticky;
 }
 
 td {
@@ -70,4 +67,11 @@ h2{
 
 .mainTable {
     margin-left:120px;
+    overflow:auto;
+    max-height:14.2em;
+}
+
+.editTable {
+    display:none;
+    text-align: center;
 }

@@ -3,6 +3,7 @@
 
 {% block head %}
     <link href="{{ url_for('static', filename='css/houses.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 
@@ -10,26 +11,25 @@
 <h2>Rental Property Information</h2>
 <div class="buttons">
     <div class="add">
-        <button class="add_button" id="btn">Add entry</button>
+        <a href="/add_rental_property"><button class="add_button">Add entry</button></a>
     </div>
     <div class="print">
         <button class="print_button" id="btn2">Print page</button>
-    </div>
-    <div class="save">
-        <button class="save_button" id="btn3">Save as CSV file</button>
     </div>
 </div>
 <br>
 <div class="mainTable">
     <table id="Mytable">
-      <tr>
-        <th>Property address</th>
-        <th>Property value</th>
-        <th>Condition</th>
-        <th>Type</th>
-        <th>Delete</th>
-        <th>Edit</th>
-      </tr>
+      <thead>
+          <tr>
+            <th>Property address</th>
+            <th>Property value</th>
+            <th>Condition</th>
+            <th>Type</th>
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+      </thead>
       <tbody>
         {% for row in value %}
             <tr id="a">
@@ -37,14 +37,32 @@
                 <td>{{row[1]}}</td>
                 <td>{{row[2]}}</td>
                 <td>{{row[3]}}</td>
-                <td> Remove </td>
-                <th> Update </th>
+                <td><i class="fa fa-remove" style="font-size:24px;color:red"></i></td>
+                <td><i class="fa fa-edit" style="font-size:24px;color:red"></i></td>
             </tr>
         {% endfor %}
       </tbody>
     </table>
 </div>
+<div class = "editTable">
+    <form>
+        <label for="propvalue">Property value:</label><br>
+        <input type="Number" id="propvalue" name="propvalue"><br>
+        <br>
+        <label for="condition">Condition:</label><br>
+        <input type="text" id="condition" name="condition"><br>
+        <br>
+        <label for="type">Type:</label><br>
+        <input type="text" id="type" name="type"><br>
+        <br>
+        <button id="e" onclick="editRow()"> Update </button>
+        <br>
+    </form>
+</div>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/delete_houses.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/update_houses.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/print.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/save.js') }}"></script>
+
 {% endblock %}

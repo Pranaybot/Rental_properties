@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link href="{{ url_for('static', filename='css/add_tenant_info.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block body %}
+<h2>Tenant Info Form</h2>
+<div class="addtenant">
+    <form>
+        <label for="tenantid">Tenant ID:</label><br>
+        <input type="text" id="tenantid" name="tenantid" size="30"><br>
+        <br>
+        <label for="owner">Owner:</label><br>
+        <input type="text" id="owner" name="owner" size="30"><br>
+        <br>
+        <label for="phonenumber">Phone number:</label><br>
+        <input type="text" id="phonenumber" name="phonenumber" size="30"><br>
+        <br>
+        <label for="moveindate">Move in date:</label><br>
+        <input type="date" id="moveindate" name="moveindate"><br>
+        <br>
+        <label for="moveoutdate">Move out date:</label><br>
+        <input type="date" id="moveoutdate" name="moveoutdate"><br>
+        <br>
+        <label for="propaddress">Property address:</label><br>
+        <input type="text" id="propaddress" name="propaddress" size="30"><br>
+        <br>
+        <button id="btn" > Submit </button>
+        <br>
+    </form>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/add_tenants.js') }}"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+{% endblock %}

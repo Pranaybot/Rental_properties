@@ -24,7 +24,13 @@ p {
 
 .hs{
     color:green;
-    margin-left:50px;
+    margin-left:100px;
+    font-size:25px;
+}
+
+.hs2{
+    color:green;
+    margin-left:60px;
 }
 
 .space {
@@ -46,4 +52,8 @@ p {
 
 .lnk{
     text-decoration: none;
+}
+
+.amount{
+    text-align:right;
 }

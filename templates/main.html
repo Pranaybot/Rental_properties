@@ -11,8 +11,13 @@
 <div class="div_grid">
     <div class="rental_window">
         <div class="space">
-            <img src="{{ url_for('static', filename='images/house.png') }}" alt="home" class="home">
-            <p class="hs"><b>Houses</b></p>
+            <div class="img">
+                <img src="{{ url_for('static', filename='images/house.png') }}" alt="home" class="home">
+            </div>
+            <div class="amount">
+                <p class="hs"><b>{{num_houses}}</b></p>
+                <p class="hs2"> Houses </p>
+            </div>
         </div>
         <br>
         <div class="text">
@@ -22,23 +27,33 @@
 
     <div class="tenant_window">
         <div class="space">
-            <img src="{{ url_for('static', filename='images/tenant.png') }}" alt="home" class="tenant">
-            <p class="hs"><b>Tenants</b></p>
+            <div class="img">
+                <img src="{{ url_for('static', filename='images/tenant.png') }}" alt="home" class="tenant">
+            </div>
+            <div class="amount">
+                <p class="hs"><b>{{num_tenants}}</b></p>
+                <p class="hs2"> Tenants </p>
+            </div>
         </div>
         <br>
         <div class="text">
-            <a class="lnk" href="/houses"><span>View Details</span></a>
+            <a class="lnk" href="/tenants"><span>View Details</span></a>
         </div>
     </div>
 
     <div class="payment_window">
         <div class="space">
-            <img src="{{ url_for('static', filename='images/payment.jpeg') }}" alt="home" class="payment">
-            <p class="hs"><b>Payments</b></p>
+            <div class="img">
+                <img src="{{ url_for('static', filename='images/payment.jpeg') }}" alt="home" class="payment">
+            </div>
+            <div class="amount">
+                <p class="hs"><b>{{num_payments}}</b></p>
+                <p class="hs2"> Payments </p>
+            </div>
         </div>
         <br>
         <div class="text">
-            <a class="lnk" href="/houses"><span>View Details</span></a>
+            <a class="lnk" href="/payments"><span>View Details</span></a>
         </div>
     </div>
 </div>
