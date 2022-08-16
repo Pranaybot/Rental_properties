@@ -16,6 +16,13 @@
     <div class="print">
         <button class="print_button" id="btn2">Print page</button>
     </div>
+    <div class="filter">
+        <button class="filter_button" id="f1">Filter results</button>
+    </div>
+    <div class="search">
+        <input type="text" id="myInput" onkeyup="searchFunction()"
+               placeholder="Search using address">
+    </div>
 </div>
 <br>
 <div class="mainTable">
@@ -32,7 +39,7 @@
       </thead>
       <tbody>
         {% for row in value %}
-            <tr id="a">
+            <tr class="a">
                 <td>{{row[0]}}</td>
                 <td>{{row[1]}}</td>
                 <td>{{row[2]}}</td>
@@ -63,6 +70,8 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/delete_houses.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/update_houses.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/show_houses_searchbox.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/filter_houses.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/print.js') }}"></script>
 
 {% endblock %}

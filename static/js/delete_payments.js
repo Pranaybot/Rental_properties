@@ -1,4 +1,4 @@
-var index, table = document.getElementById('Mytable');
+var index, table = document.getElementById('PaymentsTable');
 for (var i=1; i<table.rows.length; i++)
 {
     table.rows[i].cells[4].onclick = function()

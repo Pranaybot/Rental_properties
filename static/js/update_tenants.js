@@ -1,4 +1,4 @@
-index, table = document.getElementById("Mytable");
+index, table = document.getElementById("TenantsTable");
 
   for(var i=1; i<table.rows.length;i++)
   {
@@ -26,13 +26,12 @@ index, table = document.getElementById("Mytable");
         number: table.rows[index].cells[2].innerText,
         arrivaldate: table.rows[index].cells[3].innerText,
         departuredate: table.rows[index].cells[4].innerText,
-        address: table.rows[index].cells[5].innerText,
+        address: table.rows[index].cells[5].innerText
     }
 
-    s = JSON.stringify(house_info);
+    s = JSON.stringify(tenant_info);
     document.forms[0].reset();
 
-    window.alert(s)
     $.ajax({
         url:"/update_tenants",
         type:"POST",

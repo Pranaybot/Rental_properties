@@ -13,6 +13,11 @@
     margin-left:30px;
 }
 
+.filter{
+    margin-top:20px;
+    margin-left:30px;
+}
+
 .add_button{
     border: 1px solid #E5BEBE;
     color: white;
@@ -35,6 +40,11 @@
     background-color:#9699CB;
     border-radius:15px;
     padding:5px 30px 5px 30px;
+}
+
+.search{
+    margin-left:12px;
+    margin-top:19px;
 }
 
 table{
@@ -73,4 +83,18 @@ h2{
 .editTable {
     display:none;
     text-align: center;
+}
+
+#myInput {
+  background-image: url('/static/images/searchicon.png'); /* Add a search icon to input */
+  background-position: 5px 9px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 1px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 5px; /* Add some space below the input */
+  background-size: 23px 23px;
+  border-radius:6px;
+  display:none;
 }
