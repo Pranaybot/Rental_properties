@@ -4,7 +4,7 @@
         paymentID: document.getElementById('paymentid').value,
         payment: document.getElementById('monpayment').value,
         tenantID: document.getElementById('tenantid').value,
-        loanamount: document.getElementById('loanamount').value,
+        loanamount: document.getElementById('loanamount').value
     }
     s = JSON.stringify(payment_info);
     document.forms[0].reset();

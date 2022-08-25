@@ -11,6 +11,7 @@
         <img src="{{ url_for('static', filename='images/sun.png') }}" alt="Sun" class="sun">
         <div class="signup-form">
             <h3> Sign Up </h3>
+            <div class="message">{{message}}</div>
             <form action="/test" method="post">
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" placeholder="Enter username"
@@ -49,7 +50,7 @@
         <script type="text/javascript" src="{{ url_for('static', filename='js/confirm_password.js') }}"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
         <script>
-            $("#btn1").click(function (e) {
+            $("#btn1").submit(function (e) {
                 var username = $("#username").val();
                 var password = $("#password").val();
                 var email = $("#emailaddress").val();

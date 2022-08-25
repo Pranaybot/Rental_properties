@@ -18,6 +18,7 @@ const addTenantInfo = (ev)=>{
         data: JSON.stringify(s)});
 
 }
+
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', addTenantInfo);
 });

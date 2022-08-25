@@ -11,7 +11,8 @@
         <img src="{{ url_for('static', filename='images/sun.png') }}" alt="Sun" class="sun">
         <div class="login-form">
             <h3> Login </h3>
-            <form action="/main" method="get">
+            <div id="throwerror">{{error}}</div>
+            <form method="post">
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" placeholder="Enter username"
                        name="username" required><br>
@@ -20,7 +21,7 @@
                 <input type="password" id="password" placeholder="Enter password"
                        name="password" required><br>
                 <br>
-                <input type="submit" value="Sign In" id="btn">
+                <button type="submit" id="btn"> Sign In </button>
                 <br>
             </form>
         </div>
@@ -28,5 +29,6 @@
     <p> Forgot your password? <a href="/forgot_password"><span class="link">Click here</span></a></p>
     <p> Don't have an account? <a href="/signup"><span class="link">Sign up here</span></a></p>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/password_validation.js') }}"></script>
 </body>
 </html>

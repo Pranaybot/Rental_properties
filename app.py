@@ -4,17 +4,103 @@ import psycopg2
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('login.html')
+    if request.method == 'GET':
+        return render_template('login.html')
+    elif request.method == 'POST':
+        result = request.form.to_dict()
+        username1 = result['username']
+        password1 = result['password']
+        hostname = 'localhost'
+        database = 'Rental_management'
+        username = 'postgres'
+        pwd = '&1<6.,O7!$O9f*..*E5'
+        port_id = 5432
+        conn = None
+        cur = None
+        err = ''
+        try:
+            conn = psycopg2.connect(
+                dbname=database,
+                user=username,
+                password=pwd,
+                host=hostname,
+                port=port_id)
+
+            cur = conn.cursor()
+
+            select_script = """SELECT COUNT(*) FROM signup_info WHERE 
+                                username = %s and password = %s"""
+            select_record = (username1, password1,)
+            cur.execute(select_script, select_record)
+            user_count = cur.fetchall()
+            conn.commit()
+
+            if user_count[0][0] != 1:
+                err = 'Invalid username and password'
+
+        except Exception as error:
+            print(error)
+        finally:
+            if cur is not None:
+                cur.close()
+            if conn is not None:
+                conn.close()
+
+        if len(err) > 0:
+            return render_template('login.html', error=err)
+        else:
+            return render_template('main.html')
 
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
 
-@app.route('/forgot_password')
+@app.route('/forgot_password', methods=['GET', 'POST'])
 def forgot_password():
-    return render_template('forgot_password.html')
+    if request.method == 'GET':
+        return render_template('forgot_password.html')
+    elif request.method == 'POST':
+        output = request.get_json()
+        result = json.loads(output)
+
+        hostname = 'localhost'
+        database = 'Rental_management'
+        username = 'postgres'
+        pwd = '&1<6.,O7!$O9f*..*E5'
+        port_id = 5432
+        conn = None
+        cur = None
+        update_lst = []
+        try:
+            conn = psycopg2.connect(
+                dbname=database,
+                user=username,
+                password=pwd,
+                host=hostname,
+                port=port_id)
+
+            cur = conn.cursor()
+
+            for key in result.keys():
+                update_lst.append(result[key])
+
+            update_script = """UPDATE signup_info SET password = %s 
+                                           WHERE username = %s"""
+            update_lst2 = [update_lst[1], update_lst[0]]
+            cur.execute(update_script, update_lst2)
+
+            conn.commit()
+
+        except Exception as error:
+            print(error)
+        finally:
+            if cur is not None:
+                cur.close()
+            if conn is not None:
+                conn.close()
+
 
 @app.route('/main')
 def main():
@@ -246,6 +332,7 @@ def test():
     conn = None
     cur = None
     insert_lst = []
+    message = ''
     try:
         conn = psycopg2.connect(
             dbname=database,
@@ -273,6 +360,10 @@ def test():
         if len(data) == 0:
             cur.execute(insert_script, tuple(insert_lst))
             conn.commit()
+            message='Data entered successfully'
+        else:
+            conn.commit()
+            message='Account already exists'
 
     except Exception as error:
         print(error)
@@ -282,7 +373,7 @@ def test():
         if conn is not None:
             conn.close()
 
-    return result
+    return render_template('signup.html', message=message)
 
 @app.route('/add_houses', methods=['POST'])
 def add_houses():
@@ -672,7 +763,6 @@ def update_payments():
             conn.close()
 
     return result
-
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)

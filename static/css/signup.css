@@ -8,6 +8,7 @@ h1 {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width:18%
 }
 
 .signup-form{
@@ -83,11 +84,14 @@ html{
     background-color: white;
     cursor:pointer;
     padding: 14px 20px;
-    margin-left:850px;
     border: 0.5px solid #2257CF;
     border-radius:25px;
 }
 
 .anchor{
     text-decoration:none;
+}
+
+.home_page{
+    margin-left:622px;
 }
